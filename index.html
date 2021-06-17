@@ -1,38 +1,38 @@
-
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>WebcamJS Test Page</title>
-	<style type="text/css">
-		body { font-family: Helvetica, sans-serif; }
-		h2, h3 { margin-top:0; }
-		form { margin-top: 15px; }
-		form input { margin-right: 15px; }
-		#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
-	</style>
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width,initial-scale=1'/>
+  <meta content='true' name='HandheldFriendly'/>
+  <meta content='width' name='MobileOptimized'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+  <script type="text/javascript" src="js/webcam.min.js"></script>
+  <script src="js/fingerpose.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	
-	<div id="my_camera"></div>
-	
-	<!-- First, include the Webcam.js JavaScript Library -->
-	<script type="text/javascript" src="/webcam.min.js"></script>
-	
-	<!-- Configure a few settings and attach camera -->
-	<script language="JavaScript">
-		Webcam.set({
-			width: 100,
-			height: 100,
-			image_format: 'jpeg',
-			jpeg_quality: 90
-		});
-		Webcam.attach( '#my_camera' );
-	</script>
-	
-	<!-- A button for taking snaps -->
 
+<body>
+  
 	
+  
+    <div class="video-container"> 
+      <script language="JavaScript">
+        Webcam.set({
+          width: 100,
+          height: 100,
+          image_format: 'jpeg',
+          jpeg_quality: 90
+        });
+        Webcam.attach( '.video-container' );
+      </script>
+      <canvas id="pose-canvas" class="layer" ></canvas>
+    </div>
+    <div class = "fall"></div>
+    <div class = "redbox"></div>
+    <div class = "result"></div>
+    <div class = "bluebox"></div>
+  <script src='js/script.js' type='module'></script>
 </body>
 </html>

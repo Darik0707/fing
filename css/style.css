@@ -1,0 +1,75 @@
+
+ * {
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+
+  .bluebox{
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    display: none;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+  }
+  .redbox{
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    display: none;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+  body {
+    margin: 0;
+  }
+
+  .video-container {
+    position:relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .layer {
+    top: 0;
+  }
+  
+  .fall{
+    position: absolute;
+    top: 5px;
+    font-size: 40px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .result{
+    position: absolute;
+    bottom: 5px;
+    font-size: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #pose-video {
+    transform: scaleX(-1);
+
+    left: 0;
+  }
+
+
+
+  #pose-canvas{
+    position: absolute;
+    left: 0;
+  }
