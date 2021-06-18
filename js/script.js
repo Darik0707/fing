@@ -100,10 +100,16 @@ const video = document.querySelector("#pose-video");
       // draw colored dots at each predicted joint position
         
       if(dot !== 'indexUp'){
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio !==2.17)) {
           for(let part in predictions[i].annotations) {
             for(let point of predictions[i].annotations[part]) {
               drawPoint(ctx, point[0], point[1], 25, landmarkColors[part]);
+            }
+          }
+        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio == 2.17 )) {
+          for(let part in predictions[i].annotations) {
+            for(let point of predictions[i].annotations[part]) {
+              drawPoint(ctx, point[0]+(0.4 * video.width), point[1], 25, landmarkColors[part]);
             }
           }
         } else{
@@ -116,6 +122,8 @@ const video = document.querySelector("#pose-video");
       } else {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 25, 'blue');
+        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio ==2.16 || ratio ==2.17))  {
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.4 * video.width), predictions[i].annotations.indexFinger[3][1], 25, 'blue');
         } else {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.07 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         }
