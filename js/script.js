@@ -267,4 +267,3 @@ const video = document.querySelector("#pose-video");
     ctx.lineTo(0, 0);
     ctx.stroke();
   });
-  });
