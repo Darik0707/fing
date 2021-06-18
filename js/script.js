@@ -224,7 +224,7 @@
       }
       else if (ratio == 2.22) {
         canvas.style.top = '29%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       } 
       else if (ratio == 2.33){
         canvas.style.top = '30%';
