@@ -223,7 +223,7 @@
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       }
       else if (ratio == 2.22) {
-        canvas.style.top = '29%';
+        canvas.style.top = '27%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       } 
       else if (ratio == 2.33){
