@@ -209,7 +209,7 @@
     } else {
       
       if(ratio === 1.78){
-        canvas.style.top = '23%';
+        canvas.style.top = '21%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       } else if ( ratio == 2){
         canvas.style.top = '25%';
