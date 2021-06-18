@@ -103,7 +103,7 @@
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           for(let part in predictions[i].annotations) {
             for(let point of predictions[i].annotations[part]) {
-              drawPoint(ctx, point[0], point[1], 30, landmarkColors[part]);
+              drawPoint(ctx, point[0], point[1], 25, landmarkColors[part]);
             }
           }
         } else{
@@ -115,7 +115,7 @@
         }
       } else {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 30, 'blue');
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 25, 'blue');
         } else {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.07 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         }
