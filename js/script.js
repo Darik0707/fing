@@ -201,8 +201,8 @@ const video = document.querySelector("#pose-video");
       } 
       else if (ratio == 2.17 || ratio == 2.16){
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.1');
-        canvas.style.top = '35%';
-        canvas.style.left = '35%';
+        canvas.style.top = '33%';
+        canvas.style.left = '38%';
       }
       else if (ratio == 2.22) {
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
@@ -238,4 +238,33 @@ const video = document.querySelector("#pose-video");
       }   
   }
 
+    
+     const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.moveTo(0,0);
+    ctx.lineTo(canvas.width,0)
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'green';
+    ctx.moveTo(canvas.width, 0);
+    ctx.lineTo(canvas.width, canvas.height);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.moveTo(canvas.width,canvas.height);
+    ctx.lineTo(0,canvas.height)
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'green';
+    ctx.moveTo(0,canvas.height);
+    ctx.lineTo(0, 0);
+    ctx.stroke();
+  });
   });
