@@ -99,13 +99,25 @@
       // draw colored dots at each predicted joint position
         
       if(dot !== 'indexUp'){
-        for(let part in predictions[i].annotations) {
-          for(let point of predictions[i].annotations[part]) {
-            drawPoint(ctx, point[0], point[1], 10, landmarkColors[part]);
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          for(let part in predictions[i].annotations) {
+            for(let point of predictions[i].annotations[part]) {
+              drawPoint(ctx, point[0], point[1], 10, landmarkColors[part]);
+            }
           }
+        } else{
+          for(let part in predictions[i].annotations) {
+            for(let point of predictions[i].annotations[part]) {
+              drawPoint(ctx, point[0]+(0.1 * video.width), point[1], 10, landmarkColors[part]);
+            }
+          } 
         }
       } else {
-        drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 10, 'blue');
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 10, 'blue');
+        } else {
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.1 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
+        }
       }
     }
       // ...and so on
@@ -176,14 +188,16 @@
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
       if(ratio === 1.78){
-        canvas.style.top = '15%';
+        canvas.style.top = '17%';
+        canvas.style.left = '-2%';
       } else if ( ratio == 2){
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
         canvas.style.top = '22%';
       } 
-      else if (ratio == 2.17){
+      else if (ratio == 2.17|| ratio == 2.16){
         canvas.style.top = '23%';
+        canvas.style.left = '-5%';
       }
       else if (ratio == 2.22) {
         canvas.style.top = '24%';
@@ -194,12 +208,13 @@
     } else {
       
       if(ratio === 1.78){
-        canvas.style.top = '22%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.9');
-      } else if ( ratio == 2){
         canvas.style.top = '23%';
-        canvas.style.left = '3%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.9');
+        canvas.style.left = '15%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+      } else if ( ratio == 2){
+        canvas.style.top = '25%';
+        canvas.style.left = '7%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } else if (ratio == 2.11) {
         canvas.style.top = '27%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
