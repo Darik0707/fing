@@ -190,7 +190,7 @@
       document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
       if(ratio === 1.78){
         canvas.style.top = '17%';
-        canvas.style.left = '-2%';
+        canvas.style.left = '-3%';
       } else if ( ratio == 2){
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
