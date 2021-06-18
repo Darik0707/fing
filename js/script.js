@@ -194,12 +194,12 @@
     } else {
       
       if(ratio === 1.78){
-        canvas.style.top = '23%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
+        canvas.style.top = '22%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.9');
       } else if ( ratio == 2){
-        canvas.style.top = '25%';
-        canvas.style.left = '5%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
+        canvas.style.top = '23%';
+        canvas.style.left = '3%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.9');
       } else if (ratio == 2.11) {
         canvas.style.top = '27%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
