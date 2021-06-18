@@ -103,7 +103,7 @@
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           for(let part in predictions[i].annotations) {
             for(let point of predictions[i].annotations[part]) {
-              drawPoint(ctx, point[0], point[1], 20, landmarkColors[part]);
+              drawPoint(ctx, point[0], point[1], 30, landmarkColors[part]);
             }
           }
         } else{
@@ -115,7 +115,7 @@
         }
       } else {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 20, 'blue');
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 30, 'blue');
         } else {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.07 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         }
@@ -190,7 +190,7 @@
       document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
       if(ratio === 1.78){
         canvas.style.top = '17%';
-        canvas.style.left = '-3%';
+        canvas.style.left = '-5%';
       } else if ( ratio == 2){
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
