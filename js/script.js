@@ -202,7 +202,7 @@ const video = document.querySelector("#pose-video");
       else if (ratio == 2.17 || ratio == 2.16){
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.1');
         canvas.style.top = '35%';
-        canvas.style.left = '40%';
+        canvas.style.left = '35%';
       }
       else if (ratio == 2.22) {
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
