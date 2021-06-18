@@ -215,10 +215,10 @@ const video = document.querySelector("#pose-video");
       
       if(ratio === 1.78){
         canvas.style.top = '21%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.95');
       } else if ( ratio == 2){
         canvas.style.top = '25%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.95');
       } else if (ratio == 2.11) {
         canvas.style.top = '27%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
