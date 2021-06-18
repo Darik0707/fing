@@ -18,6 +18,12 @@
     
   };
 
+  
+   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+  } else {
+    document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+  }
   const redbox = document.querySelector('.redbox'); 
   const bluebox = document.querySelector('.bluebox'); 
   function Box (boxOn, boxOff){
