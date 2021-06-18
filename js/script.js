@@ -1,4 +1,3 @@
-  
   const video = document.querySelector("#pose-video");
   const widthVideo = video.offsetWidth;
   const heightVideo = video.offsetHeight;
@@ -17,13 +16,8 @@
     palmBase: 'white'
     
   };
-
   
-   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
-  } else {
-    document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.7');
-  }
+
   const redbox = document.querySelector('.redbox'); 
   const bluebox = document.querySelector('.bluebox'); 
   function Box (boxOn, boxOff){
@@ -162,7 +156,6 @@
     initCamera(
       config.video.width, config.video.height, config.video.fps
     ).then(video => {
-      video.play();
       video.addEventListener("loadeddata", event => {
         console.log("Camera is ready");
         main();
@@ -174,26 +167,54 @@
     const displayWidth = window.screen.width;
     const displayHeight = window.screen.height;
     const ratio = Math.round(displayHeight/displayWidth * 100 + Number.EPSILON) / 100
-    if(ratio === 1.78){
-      canvas.style.top = '18%';
-    } else if ( ratio == 2){
-      canvas.style.top = '22%';
-    } else if (ratio == 2.11) {
-      canvas.style.top = '23%';
-    } 
-    else if (ratio == 2.17){
-      canvas.style.top = '24%';
-    }
-    else if (ratio == 2.22) {
-      canvas.style.top = '25%';
-    } 
-    else if (ratio == 2.33){
-      canvas.style.top = '26%';
-    }
+
     console.log(ratio);
   
     canvas.width = config.video.width;
     canvas.height = config.video.height;
 
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+      if(ratio === 1.78){
+        canvas.style.top = '18%';
+      } else if ( ratio == 2){
+        canvas.style.top = '22%';
+      } else if (ratio == 2.11) {
+        canvas.style.top = '23%';
+      } 
+      else if (ratio == 2.17){
+        canvas.style.top = '24%';
+      }
+      else if (ratio == 2.22) {
+        canvas.style.top = '25%';
+      } 
+      else if (ratio == 2.33){
+        canvas.style.top = '26%';
+      }
+    } else {
+      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.7');
+      if(ratio === 1.78){
+        canvas.style.top = '20%';
+        canvas.style.left = '10%';
+      } else if ( ratio == 2){
+        canvas.style.top = '23%';
+        canvas.style.left = '10%';
+      } else if (ratio == 2.11) {
+        canvas.style.top = '25%';
+        canvas.style.left = '10%';
+      } 
+      else if (ratio == 2.17){
+        canvas.style.top = '26%';
+        canvas.style.left = '10%';
+      }
+      else if (ratio == 2.22) {
+        canvas.style.top = '27%';
+        canvas.style.left = '10%';
+      } 
+      else if (ratio == 2.33){
+        canvas.style.top = '28%';
+        canvas.style.left = '10%';
+      }   
+  }
 
   });
