@@ -176,20 +176,20 @@
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
       if(ratio === 1.78){
-        canvas.style.top = '18%';
+        canvas.style.top = '17%';
       } else if ( ratio == 2){
-        canvas.style.top = '22%';
+        canvas.style.top = '21%';
       } else if (ratio == 2.11) {
-        canvas.style.top = '23%';
+        canvas.style.top = '22%';
       } 
       else if (ratio == 2.17){
-        canvas.style.top = '24%';
+        canvas.style.top = '23%';
       }
       else if (ratio == 2.22) {
-        canvas.style.top = '25%';
+        canvas.style.top = '24%';
       } 
       else if (ratio == 2.33){
-        canvas.style.top = '26%';
+        canvas.style.top = '25%';
       }
     } else {
       
