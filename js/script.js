@@ -195,10 +195,11 @@
       
       if(ratio === 1.78){
         canvas.style.top = '23%';
-        canvas.style.top = '5%';
+        canvas.style.left = '5%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } else if ( ratio == 2){
         canvas.style.top = '25%';
+        canvas.style.left = '7%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } else if (ratio == 2.11) {
         canvas.style.top = '27%';
