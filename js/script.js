@@ -192,28 +192,28 @@
         canvas.style.top = '26%';
       }
     } else {
-      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.7');
+      
       if(ratio === 1.78){
-        canvas.style.top = '20%';
-        canvas.style.left = '10%';
-      } else if ( ratio == 2){
         canvas.style.top = '23%';
-        canvas.style.left = '10%';
-      } else if (ratio == 2.11) {
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+      } else if ( ratio == 2){
         canvas.style.top = '25%';
-        canvas.style.left = '10%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+      } else if (ratio == 2.11) {
+        canvas.style.top = '27%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } 
       else if (ratio == 2.17){
-        canvas.style.top = '26%';
-        canvas.style.left = '10%';
+        canvas.style.top = '28%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       }
       else if (ratio == 2.22) {
-        canvas.style.top = '27%';
-        canvas.style.left = '10%';
+        canvas.style.top = '29%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } 
       else if (ratio == 2.33){
-        canvas.style.top = '28%';
-        canvas.style.left = '10%';
+        canvas.style.top = '30%';
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       }   
   }
 
