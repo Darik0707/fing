@@ -199,8 +199,7 @@
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       } else if ( ratio == 2){
         canvas.style.top = '25%';
-        canvas.style.left = '7%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       } else if (ratio == 2.11) {
         canvas.style.top = '27%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
