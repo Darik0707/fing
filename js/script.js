@@ -99,17 +99,11 @@ const video = document.querySelector("#pose-video");
       const dot = resul();
       // draw colored dots at each predicted joint position
         
-      if(dot !== 'indexUp'){
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio !==2.17)) {
+       if(dot !== 'indexUp'){
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           for(let part in predictions[i].annotations) {
             for(let point of predictions[i].annotations[part]) {
-              drawPoint(ctx, point[0], point[1], 25, landmarkColors[part]);
-            }
-          }
-        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio == 2.17 )) {
-          for(let part in predictions[i].annotations) {
-            for(let point of predictions[i].annotations[part]) {
-              drawPoint(ctx, point[0]+(0.4 * video.width), point[1], 25, landmarkColors[part]);
+              drawPoint(ctx, point[0], point[1], 10, landmarkColors[part]);
             }
           }
         } else{
@@ -121,9 +115,7 @@ const video = document.querySelector("#pose-video");
         }
       } else {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 25, 'blue');
-        } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && (ratio ==2.16 || ratio ==2.17))  {
-          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.4 * video.width), predictions[i].annotations.indexFinger[3][1], 25, 'blue');
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         } else {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.07 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         }
@@ -189,34 +181,32 @@ const video = document.querySelector("#pose-video");
     const displayHeight = window.screen.height;
     const ratio = Math.round(displayHeight/displayWidth * 100 + Number.EPSILON) / 100
 
-    console.log(ratio);
-  
-    canvas.width = config.video.width;
-    canvas.height = config.video.height;
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+      canvas.width = config.video.width *4 ;
+      canvas.height = config.video.height * 4;
+    } else {
+      canvas.width = config.video.width;
+      canvas.height = config.video.height;
+    }
 
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-     
+     document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       if(ratio === 1.78){
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+        
         canvas.style.top = '15%';
-        canvas.style.left = '-5%';
+   
       } else if ( ratio == 2){
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '22%';
       } 
-      else if (ratio == 2.17 || ratio == 2.16){
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.1');
+      else if (ratio == 2.17 || ratio == 2.16){  
         canvas.style.top = '33%';
       }
       else if (ratio == 2.22) {
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '24%';
       } 
       else if (ratio == 2.33){
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '25%';
       }
     } else {
@@ -244,33 +234,4 @@ const video = document.querySelector("#pose-video");
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.8');
       }   
   }
-
-    
-     const ctx = canvas.getContext('2d');
-
-    ctx.beginPath();
-    ctx.strokeStyle = 'blue';
-    ctx.moveTo(0,0);
-    ctx.lineTo(canvas.width,0)
-    ctx.stroke();
-
-
-    ctx.beginPath();
-    ctx.strokeStyle = 'green';
-    ctx.moveTo(canvas.width, 0);
-    ctx.lineTo(canvas.width, canvas.height);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.strokeStyle = 'blue';
-    ctx.moveTo(canvas.width,canvas.height);
-    ctx.lineTo(0,canvas.height)
-    ctx.stroke();
-
-
-    ctx.beginPath();
-    ctx.strokeStyle = 'green';
-    ctx.moveTo(0,canvas.height);
-    ctx.lineTo(0, 0);
-    ctx.stroke();
   });
