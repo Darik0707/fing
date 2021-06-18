@@ -191,26 +191,20 @@ const video = document.querySelector("#pose-video");
 
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
-      if(ratio === 1.78){
-        
+      if(ratio == 1.78){
         canvas.style.top = '15%';
-   
       } else if ( ratio == 2){
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
         canvas.style.top = '22%';
-      } 
-      else if (ratio == 2.17 || ratio == 2.16){  
+      } else if (ratio == 2.17 || ratio == 2.16){  
         canvas.style.top = '33%';
-      }
-      else if (ratio == 2.22) {
+      } else if (ratio == 2.22) {
         canvas.style.top = '24%';
-      } 
-      else if (ratio == 2.33){
+      } else if (ratio == 2.33){
         canvas.style.top = '25%';
       }
     } else {
-      
       if(ratio === 1.78){
         canvas.style.top = '21%';
         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.95');
