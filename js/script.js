@@ -1,4 +1,4 @@
-  const video = document.querySelector("#pose-video");
+const video = document.querySelector("#pose-video");
   const widthVideo = video.offsetWidth;
   const heightVideo = video.offsetHeight;
   const config = {
@@ -187,23 +187,29 @@
     canvas.height = config.video.height;
 
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+     
       if(ratio === 1.78){
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '15%';
         canvas.style.left = '-5%';
       } else if ( ratio == 2){
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '22%';
       } 
-      else if (ratio == 2.17|| ratio == 2.16){
+      else if (ratio == 2.17 || ratio == 2.16){
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.1');
         canvas.style.top = '23%';
         canvas.style.left = '-5%';
       }
       else if (ratio == 2.22) {
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '24%';
       } 
       else if (ratio == 2.33){
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
         canvas.style.top = '25%';
       }
     } else {
