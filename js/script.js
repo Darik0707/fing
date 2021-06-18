@@ -47,6 +47,7 @@
 
     // load handpose model
     const model = await handpose.load();
+    res.innerHTML = "Handpose model loaded";
     console.log("Handpose model loaded");
 
     // main estimation loop
