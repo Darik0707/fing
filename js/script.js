@@ -148,7 +148,6 @@ const video = document.querySelector("#pose-video");
     // get video stream
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     video.srcObject = stream;
-    console.log(stream);
 
     return new Promise(resolve => {
       video.onloadedmetadata = () => { resolve(video) };
