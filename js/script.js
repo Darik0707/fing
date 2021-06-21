@@ -103,7 +103,7 @@ const video = document.querySelector("#pose-video");
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
           for(let part in predictions[i].annotations) {
             for(let point of predictions[i].annotations[part]) {
-              drawPoint(ctx, point[0], point[1], 60, landmarkColors[part]);
+              drawPoint(ctx, point[0], point[1], 10, landmarkColors[part]);
             }
           }
         } else{
@@ -115,7 +115,7 @@ const video = document.querySelector("#pose-video");
         }
       } else {
         if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 60, 'blue');
+          drawPoint(ctx, predictions[i].annotations.indexFinger[3][0], predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         } else {
           drawPoint(ctx, predictions[i].annotations.indexFinger[3][0] + (0.07 * video.width), predictions[i].annotations.indexFinger[3][1], 10, 'blue');
         }
