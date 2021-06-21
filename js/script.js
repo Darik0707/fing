@@ -180,13 +180,13 @@ const video = document.querySelector("#pose-video");
     const displayHeight = window.screen.height;
     const ratio = Math.round(displayHeight/displayWidth * 100 + Number.EPSILON) / 100
 
-  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-      canvas.width = config.video.width * 2;
-      canvas.height = config.video.height * 2;
-    } else {
+//   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)){
+//       canvas.width = config.video.width * 2;
+//       canvas.height = config.video.height * 2;
+//     } else {
       canvas.width = config.video.width;
       canvas.height = config.video.height;
-    }
+//     }
 
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
      
