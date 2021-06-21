@@ -182,19 +182,19 @@ const video = document.querySelector("#pose-video");
     const ratio = Math.round(displayHeight/displayWidth * 100 + Number.EPSILON) / 100
 
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-      canvas.width = config.video.width * 3;
-      canvas.height = config.video.height * 3;
+      canvas.width = config.video.width * 4;
+      canvas.height = config.video.height * 4;
     } else {
       canvas.width = config.video.width;
       canvas.height = config.video.height;
     }
 
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-     document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
+     
       if(ratio == 1.78){
          canvas.style.top = '-20%';
          canvas.style.left = '-50%';
-         
+         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.1');
         
       } else if ( ratio == 2){
         canvas.style.top = '21%';
