@@ -182,8 +182,8 @@ const video = document.querySelector("#pose-video");
     const ratio = Math.round(displayHeight/displayWidth * 100 + Number.EPSILON) / 100
 
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)){
-      canvas.width = config.video.width *4 ;
-      canvas.height = config.video.height * 4;
+      canvas.width = config.video.width;
+      canvas.height = config.video.height;
     } else {
       canvas.width = config.video.width;
       canvas.height = config.video.height;
@@ -192,9 +192,7 @@ const video = document.querySelector("#pose-video");
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
      document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=1');
       if(ratio == 1.78){
-         canvas.style.top = '50%';
-        canvas.style.left = '50%';
-        canvas.style.transform = 'translate(-50%, -50%)';
+         canvas.style.top = '15%';
       } else if ( ratio == 2){
         canvas.style.top = '21%';
       } else if (ratio == 2.11) {
