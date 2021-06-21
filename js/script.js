@@ -191,7 +191,7 @@ const video = document.querySelector("#pose-video");
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
      
       if(ratio == 1.78){
-         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+         document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-height,initial-scale=0.4');
           canvas.style.top = '15%';
         canvas.style.left = '-5%';
       } else if ( ratio == 2){
@@ -200,7 +200,7 @@ const video = document.querySelector("#pose-video");
         canvas.style.top = '22%';
       } else if (ratio == 2.17 || ratio == 2.16){  
         canvas.style.top = '33%';
-        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-width,initial-scale=0.4');
+        document.getElementsByTagName('meta')[1].setAttribute( 'content', 'width=device-height,initial-scale=0.4');
       }
     } else {
       if(ratio === 1.78){
